@@ -1,66 +1,58 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Bazar</title>
-    <style>
-        body {
-            font-family: sans-serif;
-            background: #f7f7f7;
-            padding: 20px;
-            color: #333;
-        }
-        header {
-            background-color: #6a1b9a;
-            color: #fff;
-            padding: 15px;
-            text-align: center;
-            border-radius: 10px;
-        }
-        h1 {
-            margin: 0;
-            font-size: 28px;
-        }
-        .category {
-            background-color: #ffeb3b;
-            margin: 20px 0;
-            padding: 15px;
-            border-radius: 10px;
-        }
-        .category h2 {
-            margin-top: 0;
-        }
-        footer {
-            text-align: center;
-            margin-top: 30px;
-            color: #555;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-Bazar - গেঞ্জি, কাঁচামাল, জ্যাকেট, জুতা, প্যান্ট, ঘড়ি, সৌন্দর্য পণ্যের সেরা কালেকশন।">
+  <title>E-Bazar</title>
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; background:#f4f4f4; }
+    header { background:#0a74da; color:white; padding:1rem; text-align:center;}
+    nav { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; padding:10px; background:white; border-bottom:1px solid #ccc;}
+    nav a { text-decoration:none; color:#0a74da; font-weight:bold;}
+    .banner { background: url('https://via.placeholder.com/1200x300?text=E-Bazar+Banner') center/cover; height:300px;}
+    .section { padding:2rem; text-align:center;}
+    .products { display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
+    .product { background:white; padding:1rem; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1); width:200px;}
+    .product img { width:100%; height:150px; object-fit:cover; border-radius:10px;}
+    .whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:12px 18px; border-radius:50px; font-weight:bold; text-decoration:none;}
+    footer { text-align:center; padding:1rem; background:#eee; color:#555;}
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to E-Bazar</h1>
-        <p>WhatsApp: 01755733427</p>
-    </header>
-
-    <div class="category">
-        <h2>👕 গেঞ্জি</h2>
-        <p>সেরা মানের এক্সপোর্ট কোয়ালিটি গেঞ্জি পাওয়া যাচ্ছে।</p>
+  <header>
+    <h1>স্বাগতম E-Bazar-এ</h1>
+    <p>সবকিছু এক জায়গায়!</p>
+  </header>
+  <nav>
+    <a href="#">গেঞ্জি</a>
+    <a href="#">কাঁচামাল</a>
+    <a href="#">জ্যাকেট</a>
+    <a href="#">জুতা</a>
+    <a href="#">প্যান্ট</a>
+    <a href="#">শার্ট</a>
+    <a href="#">সৌন্দর্য পণ্য</a>
+    <a href="#">ঘড়ি</a>
+  </nav>
+  <div class="banner"></div>
+  <div class="section">
+    <h2>জনপ্রিয় পণ্যসমূহ</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://via.placeholder.com/200x150?text=গেঞ্জি" alt="গেঞ্জি">
+        <h4>গেঞ্জি – ২০০৳</h4>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/200x150?text=জ্যাকেট" alt="জ্যাকেট">
+        <h4>বাইকার জ্যাকেট – ১৫০০৳</h4>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/200x150?text=ঘড়ি" alt="ঘড়ি">
+        <h4>স্টাইলিশ ঘড়ি – ৫০০৳</h4>
+      </div>
     </div>
-
-    <div class="category">
-        <h2>🧵 কাঁচামাল</h2>
-        <p>বিভিন্ন প্রকার কাপড়ের কাঁচামাল (যার মাধ্যমে আপনি নিজের ডিজাইন বানাতে পারবেন)।</p>
-    </div>
-
-    <div class="category">
-        <h2>🧥 বাইকার জ্যাকেট</h2>
-        <p>BMW / Yamaha স্টাইল বাইকার জ্যাকেট — সরাসরি চায়না থেকে আমদানি করা।</p>
-    </div>
-
-    <footer>
-        &copy; 2025 E-Bazar. All rights reserved.
-    </footer>
+  </div>
+  <a class="whatsapp" href="https://wa.me/8801755733427" target="_blank">WhatsApp Order</a>
+  <footer>&copy; 2025 E-Bazar. সকল স্বত্ব সংরক্ষিত।</footer>
 </body>
 </html>
