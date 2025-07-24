@@ -1,58 +1,114 @@
-<!DOCTYPE html>
-<html lang="bn">
+<!DOCTYPE html><html lang="bn">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="E-Bazar - গেঞ্জি, কাঁচামাল, জ্যাকেট, জুতা, প্যান্ট, ঘড়ি, সৌন্দর্য পণ্যের সেরা কালেকশন।">
   <title>E-Bazar</title>
   <style>
-    body { margin:0; font-family: Arial, sans-serif; background:#f4f4f4; }
-    header { background:#0a74da; color:white; padding:1rem; text-align:center;}
-    nav { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; padding:10px; background:white; border-bottom:1px solid #ccc;}
-    nav a { text-decoration:none; color:#0a74da; font-weight:bold;}
-    .banner { background: url('https://via.placeholder.com/1200x300?text=E-Bazar+Banner') center/cover; height:300px;}
-    .section { padding:2rem; text-align:center;}
-    .products { display:flex; flex-wrap:wrap; justify-content:center; gap:20px;}
-    .product { background:white; padding:1rem; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.1); width:200px;}
-    .product img { width:100%; height:150px; object-fit:cover; border-radius:10px;}
-    .whatsapp { position:fixed; bottom:20px; right:20px; background:#25D366; color:white; padding:12px 18px; border-radius:50px; font-weight:bold; text-decoration:none;}
-    footer { text-align:center; padding:1rem; background:#eee; color:#555;}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fff8e1;
+      color: #333;
+    }
+    header {
+      background-color: #6a1b9a;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #fdd835;
+      padding: 10px;
+    }
+    nav button {
+      margin: 5px;
+      padding: 10px 20px;
+      background-color: #6a1b9a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .product {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      background: #fff;
+      text-align: center;
+    }
+    .product img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    footer {
+      background: #6a1b9a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+    .whatsapp-btn {
+      background-color: #25d366;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 10px;
+    }
   </style>
 </head>
-<body>
-  <header>
-    <h1>স্বাগতম E-Bazar-এ</h1>
-    <p>সবকিছু এক জায়গায়!</p>
-  </header>
-  <nav>
-    <a href="#">গেঞ্জি</a>
-    <a href="#">কাঁচামাল</a>
-    <a href="#">জ্যাকেট</a>
-    <a href="#">জুতা</a>
-    <a href="#">প্যান্ট</a>
-    <a href="#">শার্ট</a>
-    <a href="#">সৌন্দর্য পণ্য</a>
-    <a href="#">ঘড়ি</a>
-  </nav>
-  <div class="banner"></div>
-  <div class="section">
-    <h2>জনপ্রিয় পণ্যসমূহ</h2>
-    <div class="products">
+<body><header>
+  <h1>Welcome to E-Bazar</h1>
+  <p>আপনার পছন্দের সব পণ্য এক জায়গায়!</p>
+</header><nav>
+  <button onclick="filterProducts('সব')">সব</button>
+  <button onclick="filterProducts('গেঞ্জি')">গেঞ্জি</button>
+  <button onclick="filterProducts('কাঁচামাল')">কাঁচামাল</button>
+  <button onclick="filterProducts('বাইকার জ্যাকেট')">বাইকার জ্যাকেট</button>
+  <button onclick="filterProducts('সাইকেল')">সাইকেল</button>
+</nav><div class="products" id="productContainer">
+  <!-- পণ্যের তালিকা এখানে আসবে -->
+</div><footer>
+  <p>WhatsApp: <a class="whatsapp-btn" href="https://wa.me/8801755733427" target="_blank">01755733427</a></p>
+  <p>Cash on Delivery Available | Facebook Page: <a href="https://facebook.com/e-bazar786" target="_blank" style="color:#ffd600">facebook.com/e-bazar786</a></p>
+</footer><script>
+const products = [
+  { name: 'রঙিন গেঞ্জি', category: 'গেঞ্জি', img: 'https://via.placeholder.com/200x150?text=গেঞ্জি' },
+  { name: 'কটন কাঁচামাল', category: 'কাঁচামাল', img: 'https://via.placeholder.com/200x150?text=কাঁচামাল' },
+  { name: 'BMW বাইকার জ্যাকেট', category: 'বাইকার জ্যাকেট', img: 'https://via.placeholder.com/200x150?text=জ্যাকেট' },
+  { name: 'চিল্ড্রেন সাইকেল', category: 'সাইকেল', img: 'https://via.placeholder.com/200x150?text=সাইকেল' },
+];
+
+function showProducts(filtered = 'সব') {
+  const container = document.getElementById('productContainer');
+  container.innerHTML = '';
+  const filteredProducts = filtered === 'সব' ? products : products.filter(p => p.category === filtered);
+  filteredProducts.forEach(p => {
+    container.innerHTML += `
       <div class="product">
-        <img src="https://via.placeholder.com/200x150?text=গেঞ্জি" alt="গেঞ্জি">
-        <h4>গেঞ্জি – ২০০৳</h4>
+        <img src="${p.img}" alt="${p.name}">
+        <h3>${p.name}</h3>
+        <p>Category: ${p.category}</p>
       </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x150?text=জ্যাকেট" alt="জ্যাকেট">
-        <h4>বাইকার জ্যাকেট – ১৫০০৳</h4>
-      </div>
-      <div class="product">
-        <img src="https://via.placeholder.com/200x150?text=ঘড়ি" alt="ঘড়ি">
-        <h4>স্টাইলিশ ঘড়ি – ৫০০৳</h4>
-      </div>
-    </div>
-  </div>
-  <a class="whatsapp" href="https://wa.me/8801755733427" target="_blank">WhatsApp Order</a>
-  <footer>&copy; 2025 E-Bazar. সকল স্বত্ব সংরক্ষিত।</footer>
-</body>
+    `;
+  });
+}
+
+function filterProducts(category) {
+  showProducts(category);
+}
+
+window.onload = () => showProducts();
+</script></body>
 </html>
